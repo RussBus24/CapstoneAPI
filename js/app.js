@@ -17,7 +17,7 @@ function getResults(searchTerm) {
 	};
 
 	$.ajax({
-		url: "http://www.giantbomb.com/api/search",
+		url: "https://www.giantbomb.com/api/search",
 		data: params,
 		dataType: "jsonp",
 		type: "GET",
