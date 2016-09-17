@@ -2,22 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/app.js"></script>
 	<title>NES Nostalgia</title>
 </head>
 <body>
-<div class="top-banner">
-	<h1>NES Nostalgia</h1>
-</div>
-<div class="middle-section">
-	<form class="inputBox">
-		<p><input type="text" id="SearchInput" placeholder="Type in a NES Game" name="SearchInput"></p>
-		<input type="submit" value="Search">
-	</form>
-	<p>Like many children of the 80s and 90s, I owned and played on the Nintendo Entertainment System (NES). Since I consider it to be the greatest system ever made, I thought it might be helpful to create a resource where users can access information on their favorite NES games including playthrough videos...in case you forgot to how defeat Bowser at the end of Super Mario Bros. :) Enjoy!</p>
+	<div class="top-banner">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<h1>NES Nostalgia</h1>
+				</div>
+			</div>
+		</nav>
+	</div>
+<div class="jumbotron">
+	<div class="container">
+		<form class="inputBox">
+			<p><input type="text" id="SearchInput" placeholder="Type in a NES Game" name="SearchInput"></p>
+			<input type="submit" value="Search">
+		</form>
+		<p>Like many children of the 80s and 90s, I owned and played on the Nintendo Entertainment System (NES). Since I consider it to be the greatest system ever made, I thought it might be helpful to create a resource where users can access information on their favorite NES games including playthrough videos...in case you forgot to how defeat Bowser at the end of Super Mario Bros. :) Enjoy!</p>
+		<div class="search-results-gamebomb">
 
+		</div>
+		
+		<div class="search-results-youtube">
+
+		</div>
+	</div>
 </div>
 <div class="bottom-banner">
 <p>&copy 2016 The RussBus</p>
