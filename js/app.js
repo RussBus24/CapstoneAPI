@@ -42,7 +42,7 @@ var getResults = function(searchTerm) {
 	};
 
 	$.ajax({
-		url: "http://www.giantbomb.com/api/games",
+		url: "https://www.giantbomb.com/api/games",
 		data: paramsGiantBomb,
 		dataType: "jsonp",
 		type: "GET",
