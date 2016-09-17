@@ -62,8 +62,6 @@ var getResults = function(searchTerm) {
 	});
 }
 
-
-
 function showGiantBombResults(result) {
 	console.log(result.results);
 	var html = "";
