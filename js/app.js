@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	$('#giantbomb-header').hide();
+	$('#youtube-header').hide();
 	$('.inputBox').submit(function(event) {
 		event.preventDefault();
 		searchTerm = $('#SearchInput').val();
@@ -61,11 +63,12 @@ function showGiantBombResults(result) {
 	console.log(result.results);
 	var html = "";
 	var row = $('<div>', {"class":"row"});
+	$('#giantbomb-header').show();
 	$('.search-results-gamebomb').empty();
 
 	$.each(result.results, function(index, value) {
 		var col = $('<div>', {"class":"col-md-2"});
-		col.append('<div class="search-returns-gamebomb"><img src=' + value.image.thumb_url + '><p>' + value.name + '</p></div>');
+		col.append('<div class="search-returns-gamebomb"><a href="' + value.site_detail_url + '"target="_blank""><img src=' + value.image.thumb_url + '></a><p>' + value.name + '</p></div>');
 		row.append(col);
 		if ((index + 1) % 5 == 0) {
 			$('.search-results-gamebomb').append(row);
@@ -92,6 +95,7 @@ function showYouTubeResults(items) {
 	console.log(items);
 	var html = "";
 	var row = $('<div>', {"class":"row"});
+	$('#youtube-header').show();
 	$('.search-results-youtube').empty();
 
 	$.each(items, function(index, value) {
