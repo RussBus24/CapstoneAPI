@@ -60,40 +60,59 @@ var getResults = function(searchTerm) {
 function showGiantBombResults(result) {
 	console.log(result.results);
 	var html = "";
-	//var row = $('<div>', {"class":"row"});
+	var row = $('<div>', {"class":"row"});
+	$('.search-results-gamebomb').empty();
 
 	$.each(result.results, function(index, value) {
-		var row = $('<div>', {"class":"row"});
 		var col = $('<div>', {"class":"col-md-2"});
 		col.append('<div class="search-returns-gamebomb"><img src=' + value.image.thumb_url + '><p>' + value.name + '</p></div>');
 		row.append(col);
 		if ((index + 1) % 5 == 0) {
 			$('.search-results-gamebomb').append(row);
-			var row = $('<div>', {"class":"row"}); 
-		}; 
-
-		if(row.children().length > 0) {
-			$('.search-results-gamebomb').append(row);
-		};
+			row = $('<div>', {"class":"row"}); 
+		}
 	});
+
+	if(row.children().length > 0) {
+			$('.search-results-gamebomb').append(row);
+		}
 
 	$('.row').each(function(index, row) {
 		console.log(row);
 		$(this).children('.col-md-2').first().addClass('col-md-offset-1');
+
 	});
 
 	var searchResults = showSearchResults(searchTerm, result.results.length);
 		$('#search-results-number-gamebomb').html(searchResults);
-	$('.search-results-gamebomb').html(html);
+	
 }
 
 function showYouTubeResults(items) {
 	console.log(items);
 	var html = "";
+	var row = $('<div>', {"class":"row"});
+	$('.search-results-youtube').empty();
+
 	$.each(items, function(index, value) {
-		html += '<div class="search-returns-youtube"><a href="https://www.youtube.com/watch?v=' + value.id.videoId + '"target="_blank""><img src=' + value.snippet.thumbnails.default.url + '></a><br>' + value.snippet.title + '<br></div>';
+		var col = $('<div>', {"class":"col-md-2"});
+		col.append('<div class="search-returns-youtube"><a href="https://www.youtube.com/watch?v=' + value.id.videoId + '"target="_blank""><img src=' + value.snippet.thumbnails.default.url + '></a><br>' + value.snippet.title + '<br></div>');
+		row.append(col);
+		if ((index + 1) % 5 == 0) {
+			$('.search-results-youtube').append(row);
+			row = $('<div>',{"class":"row"});
+		}
 	});
+
+	if(row.children().length > 0) {
+		$('.search-results-youtube').append(row);
+	}
+
+	$('.row').each(function(index, row) {
+		console.log(row);
+		$(this).children('.col-md-2').first().addClass('col-md-offest-1');
+	});
+
 	var searchResults = showSearchResults(searchTerm, items.length);
 	$('#search-results-number-youtube').html(searchResults);
-	$('.search-results-youtube').html(html);
 }
