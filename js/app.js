@@ -100,7 +100,7 @@ function showYouTubeResults(items) {
 
 	$.each(items, function(index, value) {
 		var col = $('<div>', {"class":"col-md-2"});
-		col.append('<div class="search-returns-youtube"><a href="https://www.youtube.com/watch?v=' + value.id.videoId + '"target="_blank""><img src=' + value.snippet.thumbnails.default.url + '></a><br>' + value.snippet.title + '<br></div>');
+		col.append('<div class="search-returns-youtube"><a href="https://www.youtube.com/watch?v=' + value.id.videoId + '"target="_blank""><img src=' + value.snippet.thumbnails.default.url + '></a><br>' + value.snippet.title + '</div>');
 		row.append(col);
 		if ((index + 1) % 5 == 0) {
 			$('.search-results-youtube').append(row);
