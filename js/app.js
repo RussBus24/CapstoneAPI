@@ -1,3 +1,4 @@
+//Initializing everything.
 $(document).ready(function () {
 	$('#giantbomb-header').hide();
 	$('#youtube-header').hide();
