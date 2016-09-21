@@ -17,6 +17,7 @@ var showSearchResults = function(query, resultNum) {
 	console.log(results);
 };
 
+//Sends and retrieves results from respective API.
 var getResults = function(searchTerm) {
 
 	var paramsYouTube = {
@@ -38,8 +39,6 @@ var getResults = function(searchTerm) {
 		api_key: '912260797eff36659697647070cb48136b0775e2',
 		format: 'jsonp',
 		query: searchTerm,
-		//resources: 'games',
-		//platforms: '21',
 		filter: "platforms:21,name:" + searchTerm + ",sort:asc",
 		limit: '5',
 		json_callback: 'showGiantBombResults',
@@ -54,11 +53,10 @@ var getResults = function(searchTerm) {
 
 	.fail(function(jqXHR, error) {
 		console.log(error);
-		//var errorElem = showError(error);
-		//$('.search-results').append(errorElem);
 	});
 }
 
+//Display GiantBomb results.
 function showGiantBombResults(result) {
 	console.log(result.results);
 	var html = "";
@@ -91,6 +89,7 @@ function showGiantBombResults(result) {
 	
 }
 
+//Display YouTube results.
 function showYouTubeResults(items) {
 	console.log(items);
 	var html = "";
