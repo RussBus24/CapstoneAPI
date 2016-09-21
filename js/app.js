@@ -11,6 +11,7 @@ $(document).ready(function () {
 
 var searchTerm 
 
+//Write to HTML with search results.
 var showSearchResults = function(query, resultNum) {
 	var results = resultNum + ' results for <strong>' + query + '</strong>';
 	return results;
