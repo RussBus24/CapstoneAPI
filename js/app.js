@@ -5,8 +5,8 @@ $(document).ready(function () {
 	$('.inputBox').submit(function(event) {
 		event.preventDefault();
 		searchTerm = $('#SearchInput').val();
-		console.log(searchTerm);
 		getResults(searchTerm);
+		$('#SearchInput').val('');
 	});
 });
 
@@ -16,7 +16,6 @@ var searchTerm
 var showSearchResults = function(query, resultNum) {
 	var results = resultNum + ' results for <strong>' + query + '</strong>';
 	return results;
-	console.log(results);
 };
 
 //Sends and retrieves results from respective API.
@@ -33,8 +32,6 @@ var getResults = function(searchTerm) {
 
 	$.getJSON(url, paramsYouTube, function(data) {
 			showYouTubeResults(data.items);
-			console.log(data);
-			console.log(data.items);
 		});
 
 	var paramsGiantBomb = {
@@ -60,7 +57,6 @@ var getResults = function(searchTerm) {
 
 //Display GiantBomb results.
 function showGiantBombResults(result) {
-	console.log(result.results);
 	var html = "";
 	var row = $('<div>', {"class":"row"});
 	$('#giantbomb-header').show();
@@ -81,7 +77,6 @@ function showGiantBombResults(result) {
 		}
 
 	$('.row').each(function(index, row) {
-		console.log(row);
 		$(this).children('.col-md-2').first().addClass('col-md-offset-1');
 
 	});
@@ -93,7 +88,6 @@ function showGiantBombResults(result) {
 
 //Display YouTube results.
 function showYouTubeResults(items) {
-	console.log(items);
 	var html = "";
 	var row = $('<div>', {"class":"row"});
 	$('#youtube-header').show();
@@ -114,7 +108,6 @@ function showYouTubeResults(items) {
 	}
 
 	$('.row').each(function(index, row) {
-		console.log(row);
 		$(this).children('.col-md-2').first().addClass('col-md-offest-1');
 	});
 
