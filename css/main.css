@@ -9,6 +9,15 @@ and (-webkit-device-pixel-ratio : 3) {
 	.jumbotron {
 		text-align: center;
 	}
+	.search-returns-youtube {
+		margin: 1px!important;
+	}
+	.search-results-youtube {
+		margin-left: 23px!important;
+	}
+	.search-results-gamebomb {
+		margin-left: 24px!important;
+	}
 }
 
 @media only screen
@@ -17,6 +26,15 @@ and (max-device-width: 568px)
 and (-webkit-device-pixel-ratio: 2) {
 	.jumbotron {
 		text-align: center;
+	}
+	.search-returns-youtube {
+		margin: 1px!important;
+	}
+	.search-results-youtube {
+		margin-left: 23px!important;
+	}
+	.search-results-gamebomb {
+		margin-left: 24px!important;
 	}
 }
 
@@ -27,6 +45,20 @@ and (-webkit-device-pixel-ratio: 2) {
 	.jumbotron {
 		text-align: center;
 	}
+	.search-returns-youtube {
+		margin: 1px!important;
+		height: 170px!important;
+		width: 180px!important;
+	}
+	.search-results-youtube {
+		margin-left: 23px!important;
+	}
+	.search-results-gamebomb {
+		margin-left: 35px!important;
+	}
+	.search-returns-gamebomb {
+		width: 175px!important;
+	}
 }
 
 #giantbomb-header {
@@ -34,7 +66,7 @@ and (-webkit-device-pixel-ratio: 2) {
 }
 
 #youtube-header {
-
+	clear: both;
 }
 
 .top-banner, .bottom-banner {
@@ -52,7 +84,7 @@ and (-webkit-device-pixel-ratio: 2) {
 }
 
 .search-results-gamebomb {
-	height: 300px;
+	height: auto;
 
 }
 
@@ -75,7 +107,7 @@ and (-webkit-device-pixel-ratio: 2) {
 }
 
 .search-returns-youtube {
-	background-color: #0000FF;
+	background-color: #3f51b5;
 	color: #fff;
 	border: 1px solid #000000;
 	height: 200px;
