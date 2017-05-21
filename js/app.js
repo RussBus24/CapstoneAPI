@@ -9,7 +9,8 @@ $(document).ready(function () {
             alert('Please enter a search term first.');
         }
         else {
-            getResults(searchTerm);
+            getYouTubeResults(searchTerm);
+            getGiantBombResults(searchTerm);
             $('#SearchInput').val('');
         }
     });
@@ -24,20 +25,30 @@ var showSearchResults = function(query, resultNum) {
 };
 
 //Sends and retrieves results from respective API.
-var getResults = function(searchTerm) {
+var getYouTubeResults = function(searchTerm) {
 
     var paramsYouTube = {
         part: 'snippet',
         key: 'AIzaSyBA2isVfGr3uYzEiI5uxCNiogM_sN4YuFE',
         q: searchTerm + 'nes',
         channelId: 'UCVi6ofFy7QyJJrZ9l0-fwbQ',
-        maxResults: 5,
+        maxResults: 5
     };
     url = 'https://www.googleapis.com/youtube/v3/search';
 
-    $.getJSON(url, paramsYouTube, function(data) {
+    $.getJSON(url, paramsYouTube, function (data) {
         showYouTubeResults(data.items);
-    });
+    })
+        .done(function() {
+            console.log("Search worked!");
+        })
+
+        .fail(function() {
+            console.log("Search failed.");
+        });
+};
+
+var getGiantBombResults = function(searchTerm) {
 
     var paramsGiantBomb = {
         api_key: '912260797eff36659697647070cb48136b0775e2',
@@ -45,7 +56,7 @@ var getResults = function(searchTerm) {
         query: searchTerm,
         filter: "platforms:21,name:" + searchTerm + ",sort:asc",
         limit: '5',
-        json_callback: 'showGiantBombResults',
+        json_callback: 'showGiantBombResults'
     };
 
     $.ajax({
@@ -54,7 +65,9 @@ var getResults = function(searchTerm) {
         dataType: "jsonp",
         type: "GET",
     })
-
+        .done(function(jqXHR, error) {
+            console.log(jqXHR);
+        })
         .fail(function(jqXHR, error) {
             console.log(error);
         });
